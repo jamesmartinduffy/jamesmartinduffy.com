@@ -1,0 +1,112 @@
+@import "compass/css3";
+
+$backgroundColor: #fff;
+$color: #555;
+$linkColor: darken($color, 10%);
+$highlight: red;
+
+$fontSize: 22px;
+
+@mixin bp($media) {
+  @if $media == phone {
+    @media only screen and (max-width: 480px) { @content; }
+  }
+  @if $media == firstbreak {
+    @media only screen and (max-width: 1140px) { @content; }
+  }
+  @else {
+    @media only screen and (max-width: $media + px) { @content; }
+  }
+}
+
+html {
+  background-color: $backgroundColor;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: $fontSize;
+  line-height: 1.7em;
+  color: $color;
+  max-width: 1050px;
+  margin: 200px auto;
+  @include bp(firstbreak) {
+    padding: 0 30px;
+    margin-top: 80px;
+  }
+  @include bp(phone) {
+    font-size: 16px;
+    margin-top: 50px;
+  }
+}
+
+a, a:active, a:visited {
+  text-decoration: none;
+  color: $linkColor;
+  font-weight: 600;
+  border-bottom: 1px dotted $color;
+}
+a:hover {
+  color: darken($linkColor, 20%);
+  border-bottom: 1px solid $color;
+}
+
+.content {
+  float: left;
+  max-width: 750px;
+  margin: 0 auto 200px;
+  @include bp(firstbreak) {
+    float: none;
+  }
+  header {
+    @include bp(phone) {
+      margin-top: 30px;
+    }
+    h1 {
+      color: darken($color, 20%);
+      font-size: 2.2em;
+      line-height: 1.5em;
+      margin-top: 0;
+    }
+    p {
+      color: darken($color, 10%);
+      font-size: 1.5em;
+      line-height: 1.5em;
+      letter-spacing: -1px;
+      strong {
+        color: darken($highlight, 20%);
+      }
+    }
+  }
+
+  strong {
+    color: darken($color, 15%);
+  }
+
+  .contact {
+    color: darken($highlight, 20%);
+    a, a:active, a:visited {
+      color: darken($highlight, 20%);
+    }
+    a:hover {
+      color: darken($highlight, 30%);
+    }
+  }
+}
+
+.bio {
+  float: right;
+  margin-top: -15px;
+  img {
+    max-width: 100%;
+  }
+  @include bp(firstbreak) {
+    float: none;
+    margin: 0px auto 50px;
+    max-width: 280px;
+  }
+  @include bp(phone) {
+    margin-bottom: 0;
+    width: 60%;
+  }
+}

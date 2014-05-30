@@ -51,14 +51,14 @@ a:hover {
   border-bottom: 1px solid $color;
 }
 
-.content {
+main {
   float: left;
   max-width: 750px;
   margin: 0 auto 200px;
   @include bp(firstbreak) {
     float: none;
   }
-  header {
+  > header {
     @include bp(phone) {
       margin-top: 30px;
     }
@@ -76,6 +76,25 @@ a:hover {
       strong {
         color: darken($highlight, 20%);
       }
+    }
+  }
+
+  section {
+    margin-top: 60px;
+    @include bp(phone) {
+      margin-top: 40px;
+    }
+
+    h2 {
+      font-size: 26px;
+      color: #000;
+      margin: 1.4em 0 0.4em;
+      @include bp(phone) {
+        font-size: 22px;
+      }
+    }
+    h2 ~ p {
+      margin-top: 0;
     }
   }
 

@@ -3,33 +3,30 @@ html { background-color: white; }
 body { font-family: 'Open Sans', sans-serif; font-size: 22px; line-height: 1.7em; color: #555555; max-width: 1050px; margin: 200px auto; }
 @media only screen and (max-width: 1140px) { body { padding: 0 30px; margin-top: 80px; } }
 @media only screen and (max-width: 480px) { body { font-size: 16px; margin-top: 50px; } }
-@media only screen and (max-width: phonepx) { body { font-size: 16px; margin-top: 50px; } }
 
 a, a:active, a:visited { text-decoration: none; color: #3b3b3b; font-weight: 600; border-bottom: 1px dotted #555555; }
 
 a:hover { color: #080808; border-bottom: 1px solid #555555; }
 
-main { float: left; max-width: 750px; margin: 0 auto 200px; }
+main { float: left; max-width: 750px; margin: 0 auto 200px; /*
+.contact { color: darken($highlight, 20%); h2 { color: darken($highlight, 20%); } a, a:active, a:visited { color: darken($highlight, 20%); } a:hover { color: darken($highlight, 30%); }
+}
+*/ }
 @media only screen and (max-width: 1140px) { main { float: none; } }
 @media only screen and (max-width: 480px) { main > header { margin-top: 30px; } }
-@media only screen and (max-width: phonepx) { main > header { margin-top: 30px; } }
 main > header h1 { color: #222222; font-size: 2.2em; line-height: 1.5em; margin-top: 0; }
 main > header p { color: #3b3b3b; font-size: 1.5em; line-height: 1.5em; letter-spacing: -1px; }
+@media only screen and (max-width: 480px) { main > header p { font-size: 1.3em; } }
 main > header p strong { color: #990000; }
+main > header a, main > header a:visited, main > header a:active { color: #990000; font-weight: bold; }
 main section { margin-top: 60px; }
 @media only screen and (max-width: 480px) { main section { margin-top: 40px; } }
-@media only screen and (max-width: phonepx) { main section { margin-top: 40px; } }
-main section h2 { font-size: 26px; color: #000; margin: 1.4em 0 0.4em; }
+main section h2 { font-size: 1.5em; color: #000; margin: 1.4em 0 0.4em; }
 @media only screen and (max-width: 480px) { main section h2 { font-size: 22px; } }
-@media only screen and (max-width: phonepx) { main section h2 { font-size: 22px; } }
 main section h2 ~ p { margin-top: 0; }
 main strong { color: #2f2f2f; }
-main .contact { color: #990000; }
-main .contact a, main .contact a:active, main .contact a:visited { color: #990000; }
-main .contact a:hover { color: #660000; }
 
-.bio { float: right; margin-top: -15px; }
-.bio img { max-width: 100%; }
-@media only screen and (max-width: 1140px) { .bio { float: none; margin: 0px auto 50px; max-width: 280px; } }
+.bio { float: right; width: 250px; }
+@media only screen and (max-width: 1140px) { .bio { float: none; margin: 0px auto 50px; } }
 @media only screen and (max-width: 480px) { .bio { margin-bottom: 0; width: 60%; } }
-@media only screen and (max-width: phonepx) { .bio { margin-bottom: 0; width: 60%; } }
+.bio img { max-width: 100%; }

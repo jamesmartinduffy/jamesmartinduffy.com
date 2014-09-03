@@ -8,10 +8,10 @@ $highlight: red;
 $fontSize: 22px;
 
 @mixin bp($media) {
-  @if $media == phone {
+  @if $media == mobile {
     @media only screen and (max-width: 480px) { @content; }
   }
-  @if $media == firstbreak {
+  @else if $media == firstbreak {
     @media only screen and (max-width: 1140px) { @content; }
   }
   @else {
@@ -34,7 +34,7 @@ body {
     padding: 0 30px;
     margin-top: 80px;
   }
-  @include bp(phone) {
+  @include bp(mobile) {
     font-size: 16px;
     margin-top: 50px;
   }
@@ -58,38 +58,50 @@ main {
   @include bp(firstbreak) {
     float: none;
   }
+
   > header {
-    @include bp(phone) {
+    @include bp(mobile) {
       margin-top: 30px;
     }
+
     h1 {
       color: darken($color, 20%);
       font-size: 2.2em;
       line-height: 1.5em;
       margin-top: 0;
     }
+
     p {
       color: darken($color, 10%);
       font-size: 1.5em;
       line-height: 1.5em;
       letter-spacing: -1px;
+      @include bp(mobile) {
+        font-size: 1.3em;
+      }
+
       strong {
         color: darken($highlight, 20%);
       }
+    }
+
+    a, a:visited, a:active {
+      color: #990000;
+      font-weight: bold;
     }
   }
 
   section {
     margin-top: 60px;
-    @include bp(phone) {
+    @include bp(mobile) {
       margin-top: 40px;
     }
 
     h2 {
-      font-size: 26px;
+      font-size: 1.5em;
       color: #000;
       margin: 1.4em 0 0.4em;
-      @include bp(phone) {
+      @include bp(mobile) {
         font-size: 22px;
       }
     }
@@ -102,8 +114,12 @@ main {
     color: darken($color, 15%);
   }
 
+  /*
   .contact {
     color: darken($highlight, 20%);
+    h2 {
+      color: darken($highlight, 20%);
+    }
     a, a:active, a:visited {
       color: darken($highlight, 20%);
     }
@@ -111,21 +127,22 @@ main {
       color: darken($highlight, 30%);
     }
   }
+  */
 }
 
 .bio {
   float: right;
-  margin-top: -15px;
-  img {
-    max-width: 100%;
-  }
+  width: 250px;
   @include bp(firstbreak) {
     float: none;
     margin: 0px auto 50px;
-    max-width: 280px;
   }
-  @include bp(phone) {
+  @include bp(mobile) {
     margin-bottom: 0;
     width: 60%;
+  }
+
+  img {
+    max-width: 100%;
   }
 }

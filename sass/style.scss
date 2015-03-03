@@ -28,8 +28,7 @@ body {
   font-size: $fontSize;
   line-height: 1.7em;
   color: $color;
-  max-width: 1050px;
-  margin: 200px auto;
+  margin: 150px auto;
   @include bp(firstbreak) {
     padding: 0 30px;
     margin-top: 80px;
@@ -41,6 +40,7 @@ body {
 }
 
 a, a:active, a:visited {
+  @include transition(0.4s all);
   text-decoration: none;
   color: $linkColor;
   font-weight: 600;
@@ -48,59 +48,54 @@ a, a:active, a:visited {
 }
 a:hover {
   color: darken($linkColor, 20%);
-  border-bottom: 1px solid $color;
 }
 
 main {
-  float: left;
   max-width: 750px;
   margin: 0 auto 200px;
-  @include bp(firstbreak) {
-    float: none;
-  }
 
   > header {
+    color: darken($color, 10%);
+    font-size: 2em;
+    letter-spacing: -2px;
+    font-weight: 100;
+    line-height: 1.4em;
     @include bp(mobile) {
       margin-top: 30px;
+      font-size: 1.3em;
     }
 
-    h1 {
-      color: darken($color, 20%);
-      font-size: 2.2em;
-      line-height: 1.5em;
-      margin-top: 0;
-    }
-
-    p {
+    strong {
       color: darken($color, 10%);
-      font-size: 1.5em;
-      line-height: 1.5em;
-      letter-spacing: -1px;
-      @include bp(mobile) {
-        font-size: 1.3em;
-      }
-
-      strong {
-        color: darken($highlight, 20%);
-      }
     }
 
     a, a:visited, a:active {
-      color: #990000;
-      font-weight: bold;
+      font-weight: 700;
+      border-bottom: 2px dotted #3b3b3b;
     }
   }
 
   section {
-    margin-top: 60px;
+    margin-top: 100px;
     @include bp(mobile) {
       margin-top: 40px;
     }
 
+    figure {
+      float: left;
+      width: 40%;
+      margin: 0 30px 0 0;
+      img {
+        width: 100%;
+      }
+    }
+
     h2 {
       font-size: 1.5em;
-      color: #000;
+      color: #3c3c3c;
       margin: 1.4em 0 0.4em;
+      text-transform: uppercase;
+      font-weight: 800;
       @include bp(mobile) {
         font-size: 22px;
       }
@@ -128,21 +123,4 @@ main {
     }
   }
   */
-}
-
-.bio {
-  float: right;
-  width: 250px;
-  @include bp(firstbreak) {
-    float: none;
-    margin: 0px auto 50px;
-  }
-  @include bp(mobile) {
-    margin-bottom: 0;
-    width: 60%;
-  }
-
-  img {
-    max-width: 100%;
-  }
 }

@@ -1,32 +1,26 @@
-html { background-color: white; }
+html { background-color: #fff; }
 
-body { font-family: 'Open Sans', sans-serif; font-size: 22px; line-height: 1.7em; color: #555555; max-width: 1050px; margin: 200px auto; }
+body { font-family: 'Open Sans', sans-serif; font-size: 22px; line-height: 1.7em; color: #555; margin: 150px auto; }
 @media only screen and (max-width: 1140px) { body { padding: 0 30px; margin-top: 80px; } }
 @media only screen and (max-width: 480px) { body { font-size: 16px; margin-top: 50px; } }
 
-a, a:active, a:visited { text-decoration: none; color: #3b3b3b; font-weight: 600; border-bottom: 1px dotted #555555; }
+a, a:active, a:visited { -moz-transition: all 0.4s; -o-transition: all 0.4s; -webkit-transition: all 0.4s; transition: all 0.4s; text-decoration: none; color: #3b3b3b; font-weight: 600; border-bottom: 1px dotted #555; }
 
-a:hover { color: #080808; border-bottom: 1px solid #555555; }
+a:hover { color: #080808; }
 
-main { float: left; max-width: 750px; margin: 0 auto 200px; /*
+main { max-width: 750px; margin: 0 auto 200px; /*
 .contact { color: darken($highlight, 20%); h2 { color: darken($highlight, 20%); } a, a:active, a:visited { color: darken($highlight, 20%); } a:hover { color: darken($highlight, 30%); }
 }
 */ }
-@media only screen and (max-width: 1140px) { main { float: none; } }
-@media only screen and (max-width: 480px) { main > header { margin-top: 30px; } }
-main > header h1 { color: #222222; font-size: 2.2em; line-height: 1.5em; margin-top: 0; }
-main > header p { color: #3b3b3b; font-size: 1.5em; line-height: 1.5em; letter-spacing: -1px; }
-@media only screen and (max-width: 480px) { main > header p { font-size: 1.3em; } }
-main > header p strong { color: #990000; }
-main > header a, main > header a:visited, main > header a:active { color: #990000; font-weight: bold; }
-main section { margin-top: 60px; }
+main > header { color: #3b3b3b; font-size: 2em; letter-spacing: -2px; font-weight: 100; line-height: 1.4em; }
+@media only screen and (max-width: 480px) { main > header { margin-top: 30px; font-size: 1.3em; } }
+main > header strong { color: #3b3b3b; }
+main > header a, main > header a:visited, main > header a:active { font-weight: 700; border-bottom: 2px dotted #3b3b3b; }
+main section { margin-top: 100px; }
 @media only screen and (max-width: 480px) { main section { margin-top: 40px; } }
-main section h2 { font-size: 1.5em; color: #000; margin: 1.4em 0 0.4em; }
+main section figure { float: left; width: 40%; margin: 0 30px 0 0; }
+main section figure img { width: 100%; }
+main section h2 { font-size: 1.5em; color: #3c3c3c; margin: 1.4em 0 0.4em; text-transform: uppercase; font-weight: 800; }
 @media only screen and (max-width: 480px) { main section h2 { font-size: 22px; } }
 main section h2 ~ p { margin-top: 0; }
 main strong { color: #2f2f2f; }
-
-.bio { float: right; width: 250px; }
-@media only screen and (max-width: 1140px) { .bio { float: none; margin: 0px auto 50px; } }
-@media only screen and (max-width: 480px) { .bio { margin-bottom: 0; width: 60%; } }
-.bio img { max-width: 100%; }
